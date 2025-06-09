@@ -32,8 +32,7 @@ app.use(express.static(path.join(__dirname,"/public")));
 
 
 app.get("/" , ( req , res)=> {
-
-    res.send("Hi I am root ")
+     res.render('index');
 })
 //index- route 
 app.get("/Listings", async (req, res) => {
