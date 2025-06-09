@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Listing | WanderLust</title>
+</head>
+<body>
+  <h3>Edit your listing</h3>
+      
+  <!-- Method override using _method=PUT -->
+  <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+    
+    <!-- Title -->
+    <input 
+      type="text" 
+      name="listing[title]" 
+      value="<%= listing.title %>" 
+      placeholder="Enter title" 
+      required 
+    />
+    <br><br>
+
+    <!-- Description -->
+    <textarea 
+      name="listing[description]" 
+      rows="4" 
+      placeholder="Enter description" 
+      required><%= listing.description %></textarea>
+    <br><br>
+
+    <!-- Image -->
+    <input 
+      type="text" 
+      name="listing[image]" 
+      value="<%= listing.image %>" 
+      placeholder="Enter image URL" 
+    />
+    <br><br>
+
+    <!-- Price -->
+    <input 
+      type="number" 
+      name="listing[price]" 
+      value="<%= listing.price %>" 
+      placeholder="Enter price" 
+      required 
+    />
+    <br><br>
+
+    <!-- Country -->
+    <input 
+      type="text" 
+      name="listing[country]" 
+      value="<%= listing.country %>" 
+      placeholder="Enter country" 
+      required 
+    />
+    <br><br>
+
+    <!-- Location -->
+    <input 
+      type="text" 
+      name="listing[location]" 
+      value="<%= listing.location %>" 
+      placeholder="Enter location" 
+      required 
+    />
+    <br><br>
+
+    <!-- Submit Button -->
+    <button type="submit">Save Changes</button>
+  </form>
+</body>
+</html>
